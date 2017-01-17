@@ -1,0 +1,4 @@
+package: github.com/samjiks/excercise3
+import:
+- package: github.com/Masterminds/cookoo
+  version: v1.3.0

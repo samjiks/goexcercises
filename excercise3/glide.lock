@@ -1,0 +1,6 @@
+hash: 19934c6273f01d2cb9d6fcc1e761766b8f06801d324079a15e38209a0fce0457
+updated: 2016-12-25T21:49:49.656226008Z
+imports:
+- name: github.com/Masterminds/cookoo
+  version: 78aa11ce75e257c51be7ea945edb84cf19c4a6de
+testImports: []

@@ -2,23 +2,17 @@ package main
 
 import "fmt"
 
-func multiply(i int) int {
-	return i * i
+func ping(pings chan<- string, msg string) {
+    pings <- msg
 }
-
-func params(a int, b string) (x int, y string) {
-	x = a
-	y = b
-	return x, y
+func pong(pings <-chan string, pongs chan<- string) {
+    msg := <-pings
+    pongs <- msg
 }
-
-func naked(s string) (ss string) {
-	ss = s
-	return
-}
-
 func main() {
-	fmt.Println(multiply(10))
-	fmt.Println(params(1, "one"))
-	fmt.Println(naked("returning naked string"))
+    pings := make(chan string, 1)
+    pongs := make(chan string, 1)
+    ping(pings, "passed message")
+    pong(pings, pongs)
+    fmt.Println(<-pongs)
 }
